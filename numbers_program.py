@@ -8,20 +8,19 @@ def is_prime(z):
                 return False
         return True
 
-y = int(input("Please enter a start index: "))
-x = int(input("Please enter an end index: "))
+start = int(input("Please enter a start index: "))
+end = int(input("Please enter an end index: "))
 
-total_int=0
 total_prime=0
 
-for z in range(y,x+1,1):
-    total_int += 1
+if (start % 2) == 0:
+    start = start + 1
+
+for z in range(start,end+1,2):
     if is_prime(z):
         total_prime += 1
         print("",z,"*",sep='')
-    else:
-        print(z)
     
 
-print("Total number of integars printed:", total_int)
+print("Total number of integars printed:", end - start + 1)
 print("Total number of primes printed:", total_prime)
